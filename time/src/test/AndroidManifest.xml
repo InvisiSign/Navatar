@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <instrumentation
-        android:name="android.test.InstrumentationTestRunner"
-        android:targetPackage="com.navatar.time.test" />
+        android:name="android.support.test.runner.AndroidJUnitRunner"
+        android:targetPackage="com.navatar.time" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -14,7 +14,7 @@
         <uses-library android:name="android.test.runner" />
         
         <activity
-            android:name=".TimeTestActivity"
+            android:name="com.navatar.time.test.TimeTestActivity"
             android:label="@string/title_activity_time_test" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

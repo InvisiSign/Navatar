@@ -164,8 +164,8 @@ public class NavigationSelectionActivity extends Activity {
 /*    myIntent.putExtra("com.Navatar.type", typeItemSelected);
     myIntent.putExtra("com.Navatar.mode", modeItemSelected);
     myIntent.putExtra("com.Navatar.maxDistance", maxDistanceItemSelected);*/
-    myIntent.putExtra("com.Navatar.fromRoom", fromRoomItemSelected.getLandmark());
-    myIntent.putExtra("com.Navatar.toRoom", toRoomItemSelected.getLandmark());
+    //myIntent.putExtra("com.Navatar.fromRoom", fromRoomItemSelected.getLandmark());
+    //myIntent.putExtra("com.Navatar.toRoom", toRoomItemSelected.getLandmark());
     startActivity(myIntent);
   }
 

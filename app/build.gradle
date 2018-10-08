@@ -1,16 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 27
+
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
         applicationId "com.navatar"
-        minSdkVersion 17
-        targetSdkVersion 23
+        minSdkVersion 18
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -20,12 +22,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile project(':time')
-    compile project(':math')
-    compile project(':output')
-    compile project(':sensingservices')
-    compile project(':protobufs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation project(':time')
+    implementation project(':math')
+    implementation project(':output')
+    implementation project(':sensingservices')
+    implementation project(':protobufs')
+    implementation 'com.google.protobuf:protobuf-lite:3.0.1'
 }
