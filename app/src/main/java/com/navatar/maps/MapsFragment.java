@@ -168,7 +168,7 @@ public class MapsFragment extends DaggerFragment implements MapsContract.View {
         ButterKnife.apply(mapSpinner, GONE);
         ButterKnife.apply(buildingSpinner, VISIBLE);
         spinners.add(mapSpinner);
-        currentSpinner = mapSpinner;
+        currentSpinner = buildingSpinner;
         MapListAdapter<Building> listAdapter = new MapListAdapter<>(mContext, buildingSpinner, map.getBuildings(), R.string.buildingSpinnerLabel);
         disposables.add(listAdapter.getSelected().subscribe(mPresenter::onBuildingSelected));
     }
