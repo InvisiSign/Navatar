@@ -86,7 +86,6 @@ configurations.all {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
     implementation project(':protobufs')
     implementation project(':time')
     implementation project(':math')
@@ -97,7 +96,6 @@ dependencies {
     implementation project(':pathplanning')
 
     //implementation 'com.google.zxing:core:3.3.2'
-
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
     implementation 'com.google.protobuf:protobuf-lite:3.0.1'
 
@@ -109,7 +107,6 @@ dependencies {
     implementation "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
     implementation "com.google.guava:guava:$rootProject.guavaVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintVersion"
-
     implementation "android.arch.persistence.room:rxjava2:$rootProject.roomVersion"
     implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
     annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomVersion"
@@ -122,7 +119,9 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
 
     // Navigation Architecture
+
     //implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha05"
+
     //implementation "android.arch.navigation:navigation-ui-ktx:1.0.0-alpha05"
 
     // autovalue
@@ -132,7 +131,6 @@ dependencies {
     // rxjava
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
-
     implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
 
@@ -173,4 +171,5 @@ dependencies {
     androidTestImplementation "com.android.support:design:$rootProject.supportLibraryVersion"
     androidTestImplementation 'com.google.code.findbugs:jsr305:3.0.1'
     implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation project(':android-beacon-library-2.15.4')
 }

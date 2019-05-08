@@ -1,1 +1,1 @@
-include ':app', ':protobufs', ':time', ':sensingservices', ':preprocessing', ':output', ':math', ':barcodescanner', ':maps', ':particlefilter', ':pathplanning', ':scannertest'
+include ':app', ':protobufs', ':time', ':sensingservices', ':preprocessing', ':output', ':math', ':barcodescanner', ':maps', ':particlefilter', ':pathplanning', ':scannertest', ':android-beacon-library-2.15.4'

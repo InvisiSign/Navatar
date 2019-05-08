@@ -15,6 +15,9 @@ import com.navatar.location.LocationInteractor;
 import com.navatar.math.Angles;
 import com.navatar.pathplanning.Path;
 
+import org.altbeacon.beacon.BeaconConsumer;
+import org.altbeacon.beacon.BeaconManager;
+
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -26,6 +29,7 @@ public final class NavigationPresenter implements NavigationContract.Presenter {
     private final String TAG = NavigationPresenter.class.getSimpleName();
 
     private final CompositeDisposable disposables = new CompositeDisposable();
+
 
     @Inject
     RoutesRepository mRoutesRepository;
