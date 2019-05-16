@@ -221,9 +221,14 @@ public class MapsFragment extends DaggerFragment implements MapsContract.View {
         }
 
         if (spinners.size() > 0) {
+            // Remove current spinner, activate the last one and reset its selection
             currentSpinner.setVisibility(View.GONE);
             currentSpinner = spinners.removeLast();
+            currentSpinner.setSelection(currentSpinner.getCount());
             currentSpinner.setVisibility(View.VISIBLE);
+            /*  Since MapListAdapter sets its text to its hint in getView when the selection
+                is greater than the number of options it has, setting the selection to that
+                number effectively resets it. */
             return true;
         }
         return false;
