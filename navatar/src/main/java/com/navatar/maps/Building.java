@@ -1,15 +1,11 @@
 package com.navatar.maps;
 
 import com.navatar.maps.particles.ParticleState;
-import com.navatar.pathplanning.AStar;
-import com.navatar.pathplanning.Direction;
-import com.navatar.protobufs.BuildingMapProto;
-import com.navatar.protobufs.CoordinatesProto;
-import com.navatar.protobufs.FloorProto;
-import com.navatar.protobufs.LandmarkProto;
-import com.navatar.protobufs.MinimapProto;
-
-import com.navatar.pathplanning.Path;
+import com.referencepoint.proto.BuildingMapProto;
+import com.referencepoint.proto.CoordinatesProto;
+import com.referencepoint.proto.FloorProto;
+import com.referencepoint.proto.LandmarkProto;
+import com.referencepoint.proto.MinimapProto;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,7 +18,7 @@ public class Building {
     /**
      * Stores the protobuf map instance.
      */
-    private BuildingMapProto.BuildingMap protoMap;
+    private BuildingMapProto.Building protoMap;
     /**
      * The minimap grid that stores the tiles.
      */
@@ -45,10 +41,10 @@ public class Building {
 
 
     public Building(InputStream strem) throws IOException {
-        this(BuildingMapProto.BuildingMap.parseFrom(strem));
+        this(BuildingMapProto.Building.parseFrom(strem));
     }
 
-    public Building(BuildingMapProto.BuildingMap map) {
+    public Building(BuildingMapProto.Building map) {
         this.protoMap = map;
         int i = 0;
         for (FloorProto.Floor floor : map.getFloorsList()) {
@@ -165,7 +161,7 @@ public class Building {
      * @throws IOException If the method cannot read the file.
      */
     public static Building readFrom(String filename) throws IOException {
-        return new Building(BuildingMapProto.BuildingMap.parseFrom(new FileInputStream(filename)));
+        return new Building(BuildingMapProto.Building.parseFrom(new FileInputStream(filename)));
     }
 
     /**
@@ -259,7 +255,7 @@ public class Building {
         return floorTiles[row][column];
     }
 
-    public BuildingMapProto.BuildingMap getProtobufMap() {
+    public BuildingMapProto.Building getProtobufMap() {
         return protoMap;
     }
 

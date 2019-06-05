@@ -8,7 +8,7 @@ import com.navatar.maps.Landmark;
 import com.navatar.maps.Route;
 import com.navatar.maps.particles.ParticleState;
 import com.navatar.math.Distance;
-import com.navatar.protobufs.LandmarkProto.Landmark.LandmarkType;
+import com.referencepoint.proto.LandmarkProto.Landmark.LandmarkType;
 
 import java.util.HashMap;
 import java.util.LinkedList;

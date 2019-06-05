@@ -4,9 +4,9 @@
 package com.navatar.maps;
 
 import com.navatar.math.Distance;
-import com.navatar.protobufs.CoordinatesProto.Coordinates;
-import com.navatar.protobufs.LandmarkProto.Landmark.LandmarkType;
-import com.navatar.protobufs.MinimapProto;
+import com.referencepoint.proto.CoordinatesProto.Coordinates;
+import com.referencepoint.proto.LandmarkProto.Landmark.LandmarkType;
+import com.referencepoint.proto.MinimapProto;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,14 +42,14 @@ public class Tile {
      * @param tileSize       The size of the side of the square that constitutes the tile.
      * @param minCoordinates The origin point of the specific floor the tile is on.
      */
-    public Tile(MinimapProto.Minimap.Tile tile, List<com.navatar.protobufs.LandmarkProto.Landmark> landmarks, double tileSize,
+    public Tile(MinimapProto.Minimap.Tile tile, List<com.referencepoint.proto.LandmarkProto.Landmark> landmarks, double tileSize,
                 Coordinates minCoordinates) {
         this.tile = tile;
         this.landmarks = new HashMap<>(LandmarkType.values().length);
         for (LandmarkType type : LandmarkType.values())
             this.landmarks.put(type, new LinkedList<>());
         for (int landmarkIndex : tile.getLandmarksList()) {
-            com.navatar.protobufs.LandmarkProto.Landmark landmark = landmarks.get(landmarkIndex);
+            com.referencepoint.proto.LandmarkProto.Landmark landmark = landmarks.get(landmarkIndex);
             this.landmarks.get(landmark.getType()).add(new Landmark(landmark));
         }
         for (List<Landmark> landmarkGroup : this.landmarks.values()) {

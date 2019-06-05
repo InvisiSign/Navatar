@@ -2,8 +2,7 @@ package com.navatar.maps;
 
 import com.navatar.maps.particles.ParticleState;
 import com.navatar.math.Constants;
-import com.navatar.protobufs.LandmarkProto;
-import com.navatar.protobufs.CoordinatesProto;
+import com.referencepoint.proto.LandmarkProto;
 
 import java.lang.reflect.Field;
 

@@ -1,22 +1,15 @@
 apply plugin: 'java-library'
 apply plugin: 'com.google.protobuf'
 
-def reactiveGrpcVersion = '0.9.0'
 
 sourceSets {
     main.java.srcDirs += "${protobuf.generatedFilesBaseDir}/main/javalite"
-    main.java.srcDirs += "${protobuf.generatedFilesBaseDir}/main/grpc"
-    main.java.srcDirs += "${protobuf.generatedFilesBaseDir}/main/rxgrpc"
-
     main.proto.srcDirs += "src/main/protobuf"
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "io.grpc:grpc-stub:$rootProject.grpcVersion"
-    implementation "io.grpc:grpc-protobuf-lite:$rootProject.grpcVersion"
-    implementation "javax.annotation:javax.annotation-api:1.3.2"
-    implementation "com.salesforce.servicelibs:rxgrpc-stub:${reactiveGrpcVersion}"
+    implementation 'com.google.protobuf:protobuf-lite:3.0.1'
 }
 
 protobuf {
@@ -27,12 +20,6 @@ protobuf {
         javalite {
             artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
         }
-        grpc {
-            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
-        }
-        rxgrpc {
-            artifact = "com.salesforce.servicelibs:rxgrpc:${reactiveGrpcVersion}:jdk8@jar"
-        }
         sourceSet
     }
     generateProtoTasks {
@@ -42,10 +29,6 @@ protobuf {
             }
             task.plugins {
                 javalite {}
-                grpc {
-                    option 'lite'
-                }
-                rxgrpc {}
             }
         }
     }

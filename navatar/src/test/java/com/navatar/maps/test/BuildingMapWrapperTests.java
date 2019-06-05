@@ -2,7 +2,7 @@ package com.navatar.maps.test;
 
 import com.navatar.maps.Building;
 import com.navatar.maps.particles.ParticleState;
-import com.navatar.protobufs.BuildingMapProto;
+import com.referencepoint.proto.BuildingMapProto;
 
 import junit.framework.TestCase;
 
@@ -14,7 +14,7 @@ public class BuildingMapWrapperTests extends TestCase {
         ClassLoader classLoader = getClass().getClassLoader();
 
         try {
-            BuildingMapProto.BuildingMap map = BuildingMapProto.BuildingMap.parseFrom(classLoader.getResourceAsStream("test.pb"));
+            BuildingMapProto.Building map = BuildingMapProto.Building.parseFrom(classLoader.getResourceAsStream("test.pb"));
             Building wrapper = new Building(map);
 
             assertNotNull(wrapper);
@@ -29,7 +29,7 @@ public class BuildingMapWrapperTests extends TestCase {
         ClassLoader classLoader = getClass().getClassLoader();
 
         try {
-            BuildingMapProto.BuildingMap map = BuildingMapProto.BuildingMap.parseFrom(classLoader.getResourceAsStream("test.pb"));
+            BuildingMapProto.Building map = BuildingMapProto.Building.parseFrom(classLoader.getResourceAsStream("test.pb"));
             Building wrapper = new Building(map);
 
             ParticleState state = wrapper.getRoomLocation("401");

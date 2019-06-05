@@ -1,6 +1,6 @@
 package com.navatar.particlefilter;
 
-import com.navatar.protobufs.LandmarkProto.Landmark.LandmarkType;
+import com.referencepoint.proto.LandmarkProto.Landmark.LandmarkType;
 
 /**
  * @author Ilias Apostolopoulos

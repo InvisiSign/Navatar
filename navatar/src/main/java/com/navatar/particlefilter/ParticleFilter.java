@@ -9,8 +9,8 @@ import com.navatar.maps.particles.ParticleState;
 import com.navatar.math.Angles;
 import com.navatar.math.Constants;
 import com.navatar.math.Distance;
-import com.navatar.protobufs.LandmarkProto.Landmark;
-import com.navatar.protobufs.LandmarkProto.Landmark.LandmarkType;
+import com.referencepoint.proto.LandmarkProto.Landmark;
+import com.referencepoint.proto.LandmarkProto.Landmark.LandmarkType;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -278,7 +278,7 @@ public class ParticleFilter {
 
     private void sampling(LandmarkType type) {
         ParticleState currState, newState, oldState;
-        com.navatar.protobufs.LandmarkProto.Landmark closestLandmark;
+        com.referencepoint.proto.LandmarkProto.Landmark closestLandmark;
         double selection;
         double pdf[] = new double[NUM_OF_PARTICLES_PER_PF];
         double weights[] = new double[NUM_OF_PARTICLE_FILTERS];

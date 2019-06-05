@@ -1,21 +1,21 @@
 package com.navatar.pathplanning;
 
 import com.navatar.math.Distance;
-import com.navatar.protobufs.BuildingMapProto.BuildingMap;
-import com.navatar.protobufs.CoordinatesProto.Coordinates;
-import com.navatar.protobufs.FloorProto.Floor;
-import com.navatar.protobufs.LandmarkProto.Landmark;
-import com.navatar.protobufs.MinimapProto.Minimap;
+import com.referencepoint.proto.BuildingMapProto.Building;
+import com.referencepoint.proto.CoordinatesProto.Coordinates;
+import com.referencepoint.proto.FloorProto.Floor;
+import com.referencepoint.proto.LandmarkProto.Landmark;
+import com.referencepoint.proto.MinimapProto.Minimap;
 
 import java.util.List;
 import java.util.Vector;
 
 public class Direction {
 
-    private BuildingMap map;
+    private Building map;
     private static final double MAX_LANDMARK_DISTANCE = 20.0;
 
-    public Direction(BuildingMap in_map) {
+    public Direction(Building in_map) {
         this.map = in_map;
     }
 

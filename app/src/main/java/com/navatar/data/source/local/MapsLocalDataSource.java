@@ -5,26 +5,24 @@ import android.content.res.AssetManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.navatar.maps.Building;
-import com.navatar.maps.Map;
+import com.google.common.base.Optional;
 import com.navatar.data.source.MapsDataSource;
 import com.navatar.location.model.Geofence;
 import com.navatar.location.model.Point;
 import com.navatar.location.model.Polygon;
-import com.navatar.protobufs.BuildingMapProto;
+import com.navatar.maps.Building;
+import com.navatar.maps.Map;
 import com.navatar.util.schedulers.BaseSchedulerProvider;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.google.common.base.Optional;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

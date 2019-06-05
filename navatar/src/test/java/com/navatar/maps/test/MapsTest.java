@@ -1,18 +1,17 @@
 package com.navatar.maps.test;
 
-import junit.framework.TestCase;
-
-import com.navatar.maps.Building;
 import com.navatar.maps.particles.ParticleState;
-import com.navatar.protobufs.BuildingMapProto.BuildingMap;
+import com.referencepoint.proto.BuildingMapProto.Building;
+
+import junit.framework.TestCase;
 
 
 public class MapsTest extends TestCase {
 
     public void testGetRoomLocation () {
 
-        BuildingMap instance = BuildingMap.getDefaultInstance();
-        Building wrapper = new Building(instance);
+        Building instance = Building.getDefaultInstance();
+        com.navatar.maps.Building wrapper = new com.navatar.maps.Building(instance);
 
         ParticleState state = wrapper.getRoomLocation("Test");
 
